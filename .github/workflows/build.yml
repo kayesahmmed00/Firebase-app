@@ -1,6 +1,5 @@
 name: Android Build
 
-# কখন অ্যাপটি বিল্ড হবে (আপনি ম্যানুয়ালি রান করতে পারবেন)
 on:
   push:
     branches: [ "main", "master" ]
@@ -20,20 +19,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # গিটহাবের সার্ভারে গ্র্যাডল (Gradle) সেটআপ করা
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
       with:
         gradle-version: current
 
-    # অ্যাপ বিল্ড করার কমান্ড
     - name: Build Debug APK
-      run: gradle assembleDebug --stacktrace
+      run: ./gradlew assembleDebug
 
-    # বিল্ড হওয়া APK ফাইলটি ডাউনলোডের জন্য আপলোড করা
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: My-App-APK
-        path: **/*.apk
-        
+        path: app/build/outputs/apk/debug/*.apk
