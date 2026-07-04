@@ -1,47 +1,27 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-
-android {
-    compileSdkVersion 34
-    
-
-    defaultConfig {
-        applicationId "com.kayesahmmed.pro"
-        minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
     }
-    dexOptions {
-        javaMaxHeapSize "2048M"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
-
-/*dependencies {
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'com.google.firebase:firebase-analytics:11.8.0'
-    implementation 'com.google.firebase:firebase-core:11.8.0'
-    implementation 'com.google.firebase:firebase-auth:11.8.0'
-    implementation 'com.google.firebase:firebase-database:11.8.0'
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-}*/
-
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    
-    // Firebase BoM ব্যবহার করা সবচেয়ে নিরাপদ (এটি স্বয়ংক্রিয়ভাবে সঠিক ভার্সন মিলিয়ে নেয়)
-   implementation 'com.google.firebase:firebase-analytics:21.2.0'
-    implementation 'com.google.firebase:firebase-auth:21.1.0'
-    implementation 'com.google.firebase:firebase-database:20.1.0'
-    implementation 'com.google.android.gms:play-services-ads:22.5.0'
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+ 
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+ 
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
