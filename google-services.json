@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "399055351822",
+    "firebase_url": "https://kayes-ahmmed-pro-default-rtdb.firebaseio.com",
+    "project_id": "kayes-ahmmed-pro",
+    "storage_bucket": "kayes-ahmmed-pro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399055351822:android:8b22002a579b7b942f4c5f",
+        "android_client_info": {
+          "package_name": "com.kayesahmmed.pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsq6vR-qM1tVCJWWiUyZQWQW-TT-CPbfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
